@@ -1,4 +1,6 @@
 /.venv
 /.vscode
 /webinterface/__pycache__
-db.sqlite3.db
+/webinterface/db.sqlite3.db
+.env
+apinames.txt
