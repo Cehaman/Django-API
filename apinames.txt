@@ -1,0 +1,95 @@
+
+['id','ticketid','description' ,'status' ,'date' ,'assignedTo' ,'category' ,'createdDateTime' ,'severity' ,'alertstatus' 
+'incidentid' ,'classification' ,'serviceSource' ,'detectionSource' ,'alertWebURL' ,'incidentWebURL' ,'threatDisplayName' 
+'resolvedDateTime' ,'firstActivityDateTime' ,'lastActivityDateTime' ,'devicednsName' ,'osPlatform' ,rbacGroupName ,'loggedOnUser' 
+'processCommandLine' ,'logonLocation' ,'title' ,'threatFamilyName' ,'lastUpdateDateTime' ,'defenderAvStatus' ,'processStatus' 
+'recipientEmailAddress' ,'deliveryAction' ,'emailSender' ,'publicIpAddress']
+
+
+
+
+
+# Create your models here.
+class Alerts(models.Model):
+    id = models.AutoField(primary_key=True)
+    ticketid = models.CharField(max_length=500)
+    description = models.CharField(max_length=500)
+    status = models.CharField(max_length=500)
+    date = models.DateTimeField(auto_now_add=True)
+    user = models.CharField(max_length=500)
+    assignedTo   = models.CharField(max_length=500)
+    category     = models.CharField(max_length=500)
+    createdDateTime = models.DateTimeField(auto_now_add=False)
+    severity     = models.CharField(max_length=500)
+    alertstatus  = models.CharField(max_length=500)
+    incidentid   = models.CharField(max_length=500)
+    classification= models.CharField(max_length=500)
+    serviceSource = models.CharField(max_length=500)
+    detectionSource = models.CharField(max_length=500)
+    alertWebURL = models.CharField(max_length=500)
+    incidentWebURL = models.CharField(max_length=500)
+    threatDisplayName = models.CharField(max_length=500)
+    resolvedDateTime = models.DateTimeField(auto_now_add=False)
+    firstActivityDateTime = models.DateTimeField(auto_now_add=False)
+    lastActivityDateTime = models.DateTimeField(auto_now_add=False)
+    devicednsName = models.CharField(max_length=500)
+    osPlatform = models.CharField(max_length=500)
+    rbacGroupName = models.CharField(max_length=500)
+    loggedOnUser = models.CharField(max_length=500)
+    processCommandLine = models.CharField(max_length=5000)
+    logonLocation = models.CharField(max_length=500)
+    title = models.CharField(max_length=5000)
+    threatFamilyName = models.CharField(max_length=500)
+    lastUpdateDateTime = models.DateTimeField(auto_now_add=False)
+    defenderAvStatus = models.CharField(max_length=500)
+    processStatus = models.CharField(max_length=500)
+    recipientEmailAddress = models.CharField(max_length=500)
+    deliveryAction = models.CharField(max_length=500)
+    emailSender = models.CharField(max_length=500)
+    publicIpAddress = models.CharField(max_length=500)
+
+
+    def __str__(self):
+        return self.name
+
+
+
+#### API REQUEST : 
+
+ {
+            "ticketid": "da30a88c47-b597-4b52-bbac-de94eeb47dd6_1",
+            "description": "Malware and unwanted software are undesirable applications that perform annoying, disruptive, or harmful actions on affected machines. Some of these undesirable applications can replicate and spread from one machine to another. Others are able to receive commands from remote attackers and perform activities a.",
+            "status": "new",
+            "date": "2023-02-12T21:42:56.1742497Z",
+            "user" :"Bob der Baumeister",
+            "assignedTo": "low",
+            "category": "Malware",
+            "createdDateTime": "2023-02-12T21:42:56.1742497Z",
+            "severity" : "High",
+            "alertstatus" : "Chill ma",
+            "incidentid": "associated with cyber",
+            "classification": "low",
+            "serviceSource": "microsoftDefenderForEndpoint",
+            "detectionSource": "antivirus",
+            "alertWebURL": "https://security.microsoft.com/alerts/da30a88c47-b597-4b52-bbac-de94eeb47dd6_1?tid=de05852a-b710-4511-a1c5-21f394afd842",
+            "incidentWebURL": "https://security.microsoft.com/incidents/9953?tid=de05852a-b710-4511-a1c5-21f394afd842",
+            "threatDisplayName": "VirTool:PowerShell/PsObfus.gen!A",
+            "resolvedDateTime": "2023-02-12T21:39:02.6220384Z",
+            "firstActivityDateTime": "2023-02-12T21:39:02.6220384Z",
+            "lastActivityDateTime": "2023-02-12T21:39:02.6220384Z",
+            "devicednsName": "oly-10401.olympus-ossa.com",
+            "osPlatform": "Windows10",
+            "rbacGroupName": "Client Systems",
+            "loggedOnUser":  "Charles.Matte",
+            "title": "An active 'PsObfus' malware in a PowerShell script was prevented from executing via AMSI",
+            "threatFamilyName": "PsObfus",
+            "lastUpdateDateTime": "2023-02-12T21:42:57.3333333Z",
+            "defenderAvStatus": "updated",
+            "processCommandLine": "null",
+            "recipientEmailAddress" : "helene.fischer@atmemlos.de",
+            "deliveryAction" : "nothing",
+            "emailSender" : "Ude.juergens@ohnesahne.de",
+            "publicIpAddress" : "195.156.0.0.1",
+            "logonLocation" : "Tokyo, JP",
+            "processStatus" : "Alarm im Darm"
+ }
